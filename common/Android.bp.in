@@ -1,0 +1,31 @@
+
+
+cc_library_static {
+    name: "libtigervnc",
+
+    srcs: [
+@ANDROID_SRC_FILES@@ANDROID_RFB_SRC_FILES@    ],
+
+    local_include_dirs: ["."],
+
+    rtti: true,
+
+    cflags: [
+        "-Ofast",
+        "-Wall",
+        "-Wformat=2",
+        "-DNDEBUG",
+        "-UNDEBUG",
+        "-Wno-ignored-qualifiers",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-std=c++17",
+        "-fexceptions",
+    ],
+
+    shared_libs: [
+        "libjpeg",
+        "libz",
+    ],
+
+}
